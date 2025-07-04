@@ -12,7 +12,7 @@ COPY util/ /api-flask/util/
 COPY .env application.py requirements.txt  /api-flask/
 
 # Upgrade pip and install Python dependencies
-RUN pip3 install --upgrade pip && pip install --no-cache-dir -r requirements.txt
+RUN pip3 install --upgrade pip && pip3 install --no-cache-dir -r requirements.txt
 
 # Expose port 5000 for the Flask application
 EXPOSE 5000
