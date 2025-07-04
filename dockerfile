@@ -5,11 +5,7 @@ FROM python:3.8-slim
 WORKDIR /api-flask
 
 # Copy the necessary files and directories into the container
-COPY resources/ static/ util/ .env application.py requirements.txt /api-flask/
-COPY resources/ /api-flask/resources/
-COPY static/ /api-flask/static/
-COPY util/ /api-flask/util/
-COPY .env application.py requirements.txt  /api-flask/
+COPY . /api-flask
 
 # Upgrade pip and install Python dependencies
 RUN pip3 install --upgrade pip && pip3 install --no-cache-dir -r requirements.txt
@@ -20,4 +16,4 @@ EXPOSE 6000
 ENV FLASK_APP=application.py
 
 # Define the command to run the Flask application using Gunicorn
-CMD ["flask", "run", "-b", "--host", "0.0.0.0"]
+CMD python ./application.py
