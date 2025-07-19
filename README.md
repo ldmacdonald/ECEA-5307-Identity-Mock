@@ -15,3 +15,8 @@ pip3 install flask-swagger-ui
 pip3 install gunicorn
 pip3 install python-dotenv
 ```
+
+## Start locally
+flask run --host=0.0.0.0
+
+Note: requires .flaskenv to expose website
